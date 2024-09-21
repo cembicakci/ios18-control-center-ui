@@ -2,7 +2,7 @@
 
 import { Dimensions } from "react-native";
 
-export const { height } = Dimensions.get('screen')
+export const { width, height } = Dimensions.get('screen')
 
 export const _spacing = 8;
 export const _borderRadius = 12;

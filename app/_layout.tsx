@@ -20,7 +20,7 @@ export default function RootLayout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111',
+    backgroundColor: '#bdbdbd',
     justifyContent: 'center'
   }
 })
