@@ -1,17 +1,19 @@
 import { StyleSheet, View } from 'react-native';
 
+import ControlCenter from '@/components/control.center';
 import ListElement from '@/components/list.element';
 import mockData from '@/constants/mock.data';
 
-import 'react-native-reanimated';
 import { StatusBar } from 'expo-status-bar';
+import 'react-native-reanimated';
 
 export default function RootLayout() {
 
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      <ListElement data={mockData} />
+      {/* <ListElement data={mockData} /> */}
+      <ControlCenter />
     </View>
   );
 }
