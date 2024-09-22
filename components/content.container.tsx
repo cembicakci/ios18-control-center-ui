@@ -18,8 +18,9 @@ export default ContentContainer;
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: "#00000090",
+		backgroundColor: "#00000070",
 		flex: 1,
-		borderRadius: _borderRadiusCard
+		borderRadius: _borderRadiusCard,
+		paddingVertical: 10
 	}
 });

@@ -1,19 +1,18 @@
-import { StyleSheet } from "react-native";
-import { BlurView } from "expo-blur";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 type IconContainerProps = {
-	icon: JSX.Element
+	icon: JSX.Element,
+	size?: "small" | "big",
+	color?: string
 }
 
-/**
- * @param {JSX.Element} icon - Icon direk prop olarak geçer.
- */
-
-const IconContainer = ({ icon }: IconContainerProps) => {
+const IconContainer = ({ icon, size, color }: IconContainerProps) => {
 	return (
-		<BlurView intensity={100} style={styles.blurContainer}>
+		<TouchableOpacity style={[styles.blurContainer, size === "small" ? styles.small : styles.big, {
+			backgroundColor: color ? color : '#FFFFFF30'
+		}]}>
 			{icon}
-		</BlurView>
+		</TouchableOpacity>
 	);
 };
 
@@ -25,8 +24,14 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		overflow: 'hidden',
-		borderRadius: 100,
-		width: 56,
-		height: 56
+		borderRadius: 100
 	},
+	small: {
+		width: 34,
+		height: 34
+	},
+	big: {
+		width: 68,
+		height: 68
+	}
 });

@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { G, Path, Rect, Svg, SvgProps } from "react-native-svg"
 
-export const CellularBars: FC<SvgProps> = ({ width = "26", height = "18" }) => {
+export const CellularBars: FC<SvgProps> = ({ width = "20", height = "16" }) => {
 	return (
 		<Svg width={width} height={height}>
 			<G>

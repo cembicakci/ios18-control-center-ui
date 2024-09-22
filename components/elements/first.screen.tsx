@@ -9,33 +9,53 @@ const FirstScreen = () => {
 		<View style={styles.container}>
 			<View style={styles.content}>
 				<ContentContainer>
-					<IconContainer
-						icon={<AirplaneIcon />}
-					/>
 
-					<IconContainer
-						icon={<AirdropIcon />}
-					/>
+					<View style={styles.flexEvenly}>
+						<IconContainer
+							icon={<AirplaneIcon />}
+						/>
 
-					<IconContainer
-						icon={<WifiIcon />}
-					/>
+						<IconContainer
+							icon={<AirdropIcon />}
+						/>
+					</View>
 
-					<IconContainer
-						icon={<CellularBars />}
-					/>
+					<View
+						style={[styles.flexEvenly, { marginTop: 8 }]}
+					>
+						<IconContainer
+							icon={<WifiIcon />}
+							color="#3478f6"
+						/>
 
-					<IconContainer
-						icon={<BluetoothIcon />}
-					/>
+						<View>
+							<View style={[styles.flexEvenly, { gap: 3 }]}>
+								<IconContainer
+									icon={<CellularBars />}
+									size="small"
+								/>
 
-					<IconContainer
-						icon={<PersonalHotspotIcon />}
-					/>
+								<IconContainer
+									icon={<BluetoothIcon />}
+									size="small"
+									color="#3478f6"
+								/>
+							</View>
 
-					<IconContainer
-						icon={<NetworkIcon />}
-					/>
+							<View style={[styles.flexEvenly, { gap: 3, marginTop: 3 }]}>
+								<IconContainer
+									icon={<PersonalHotspotIcon />}
+									size="small"
+								/>
+
+								<IconContainer
+									icon={<NetworkIcon />}
+									size="small"
+								/>
+							</View>
+						</View>
+
+					</View>
 
 				</ContentContainer>
 				<View style={{ flex: 1 }}>
@@ -59,5 +79,9 @@ const styles = StyleSheet.create({
 		height: "70%",
 		justifyContent: "center",
 		flexDirection: 'row'
+	},
+	flexEvenly: {
+		flexDirection: 'row',
+		justifyContent: 'space-evenly',
 	}
 });
