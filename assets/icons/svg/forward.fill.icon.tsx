@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { G, Path, Rect, Svg, SvgProps } from "react-native-svg"
 
-export const ForwardFillIcon: FC<SvgProps> = ({ width = "24", height = "24" }) => {
+export const ForwardFillIcon: FC<SvgProps> = ({ width = "28", height = "16" }) => {
 	return (
 		<Svg width={width} height={height}>
 			<G>

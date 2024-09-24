@@ -27,6 +27,7 @@ import { EllipsisIcon } from "./svg/ellipsis.icon";
 import { HomekitIcon } from "./svg/homekit.icon";
 import { HeartFillIcon } from "./svg/heart.fill.icon";
 import { MusicIcon } from "./svg/music.icon";
+import { AirdropIcon2 } from "./svg/airdrop.icon2";
 
 export {
 	AirplaneIcon,
@@ -57,5 +58,6 @@ export {
 	EllipsisIcon,
 	HomekitIcon,
 	HeartFillIcon,
-	MusicIcon
+	MusicIcon,
+	AirdropIcon2
 }

@@ -2,15 +2,22 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 
 type IconContainerProps = {
 	icon: JSX.Element,
-	size?: "small" | "big",
-	color?: string
+	color?: string,
+	size?: "small" | "normal"
 }
 
-const IconContainer = ({ icon, size, color }: IconContainerProps) => {
+const IconContainer = ({ icon, color, size }: IconContainerProps) => {
 	return (
-		<TouchableOpacity style={[styles.blurContainer, size === "small" ? styles.small : styles.big, {
-			backgroundColor: color ? color : '#FFFFFF30'
-		}]}>
+		<TouchableOpacity
+			style={
+				[
+					styles.blurContainer, size === "small" ? styles.small : styles.normal,
+					{
+						backgroundColor: color ? color : '#FFFFFF30',
+					}
+				]
+			}
+		>
 			{icon}
 		</TouchableOpacity>
 	);
@@ -23,15 +30,14 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
-		overflow: 'hidden',
-		borderRadius: 100
+		borderRadius: 100,
+	},
+	normal: {
+		width: 62,
+		height: 62
 	},
 	small: {
-		width: 34,
-		height: 34
-	},
-	big: {
-		width: 68,
-		height: 68
+		width: 30,
+		height: 30
 	}
 });

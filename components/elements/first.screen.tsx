@@ -1,65 +1,124 @@
-import { StyleSheet, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
 import { _borderRadiusCard, height } from "@/constants/constants";
-import { AirdropIcon, AirplaneIcon, BluetoothIcon, CellularBars, NetworkIcon, PersonalHotspotIcon, WifiIcon } from "@/assets/icons";
+import { defaultStyles } from "@/constants/default.styles";
+import { AirdropIcon, AirdropIcon2, AirplaneIcon, ArrowTriangleForwardFillIcon, BackwardIcon, BluetoothIcon, CellularBars, ForwardFillIcon, HomekitIcon, LockOpenRotationIcon, MoonFillIcon, NetworkIcon, PersonalHotspotIcon, QRCodeViewFinderIcon, RectangleOnIcon, SmallCircleFilledCircleIcon, WifiIcon } from "@/assets/icons";
+
 import IconContainer from "../icon.container";
-import ContentContainer from "../content.container";
 
 const FirstScreen = () => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.content}>
-				<ContentContainer>
 
-					<View style={styles.flexEvenly}>
-						<IconContainer
-							icon={<AirplaneIcon />}
-						/>
+				<View style={styles.section1}>
 
-						<IconContainer
-							icon={<AirdropIcon />}
-						/>
+					<View style={defaultStyles.card}>
+						<View style={defaultStyles.flexEvenly}>
+							<IconContainer
+								icon={<AirplaneIcon />}
+							/>
+							<IconContainer
+								icon={<AirdropIcon />}
+							/>
+						</View>
+
+						<View style={defaultStyles.flexEvenly}>
+							<IconContainer
+								icon={<WifiIcon />}
+								color="#3478f6"
+							/>
+							<View style={{ gap: 2 }}>
+								<View style={[defaultStyles.flexEvenly, { gap: 2 }]}>
+									<IconContainer
+										icon={<CellularBars />}
+										size="small"
+									/>
+
+									<IconContainer
+										icon={<BluetoothIcon />}
+										color="#3478f6"
+										size="small"
+									/>
+								</View>
+
+								<View style={[defaultStyles.flexEvenly, { gap: 2 }]}>
+									<IconContainer
+										icon={<PersonalHotspotIcon />}
+										size="small"
+									/>
+									<IconContainer
+										icon={<NetworkIcon />}
+										size="small"
+									/>
+								</View>
+							</View>
+						</View>
 					</View>
 
-					<View
-						style={[styles.flexEvenly, { marginTop: 8 }]}
-					>
-						<IconContainer
-							icon={<WifiIcon />}
-							color="#3478f6"
-						/>
+					<View style={defaultStyles.flexBetween}>
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<LockOpenRotationIcon />
+						</TouchableOpacity>
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<RectangleOnIcon />
+						</TouchableOpacity>
+					</View>
 
-						<View>
-							<View style={[styles.flexEvenly, { gap: 3 }]}>
-								<IconContainer
-									icon={<CellularBars />}
-									size="small"
-								/>
+					<TouchableOpacity style={styles.focus}>
+						<View style={defaultStyles.iconContainerSmall}>
+							<MoonFillIcon />
+						</View>
+						<Text style={defaultStyles.textMain}>Odak</Text>
+					</TouchableOpacity>
 
-								<IconContainer
-									icon={<BluetoothIcon />}
-									size="small"
-									color="#3478f6"
-								/>
-							</View>
+					<TouchableOpacity style={styles.home}>
+						<HomekitIcon />
+						<Text style={defaultStyles.textMain}>Ev'i Ayarlama Yok</Text>
+					</TouchableOpacity>
 
-							<View style={[styles.flexEvenly, { gap: 3, marginTop: 3 }]}>
-								<IconContainer
-									icon={<PersonalHotspotIcon />}
-									size="small"
-								/>
+					<View style={defaultStyles.flexBetween}>
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<SmallCircleFilledCircleIcon />
+						</TouchableOpacity>
 
-								<IconContainer
-									icon={<NetworkIcon />}
-									size="small"
-								/>
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<QRCodeViewFinderIcon />
+						</TouchableOpacity>
+					</View>
+
+				</View>
+				{/*  */}
+				<View style={styles.section2}>
+					<View style={styles.player}>
+
+						<View style={defaultStyles.flexBetween}>
+							<Image
+								source={require("@/assets/images/music-cover.jpg")}
+								style={styles.image}
+							/>
+							<View style={defaultStyles.iconContainerSmall2}>
+								<AirdropIcon2 />
 							</View>
 						</View>
 
+						<View>
+							<Text style={defaultStyles.textMain}>Sevecek Sandım</Text>
+							<Text style={defaultStyles.textDisabled}>Semicenk</Text>
+						</View>
+
+						<View style={defaultStyles.flexBetween}>
+							<TouchableOpacity>
+								<BackwardIcon />
+							</TouchableOpacity>
+							<TouchableOpacity>
+								<ArrowTriangleForwardFillIcon />
+							</TouchableOpacity>
+							<TouchableOpacity>
+								<ForwardFillIcon />
+							</TouchableOpacity>
+						</View>
 					</View>
-
-				</ContentContainer>
-				<View style={{ flex: 1 }}>
-
 				</View>
 			</View>
 		</View>
@@ -70,18 +129,47 @@ export default FirstScreen;
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
 		height: height,
 		justifyContent: 'center',
 		marginHorizontal: 32
 	},
 	content: {
-		height: "70%",
-		justifyContent: "center",
-		flexDirection: 'row'
-	},
-	flexEvenly: {
+		borderWidth: 1,
+		borderColor: "white",
+		height: height * 0.70,
 		flexDirection: 'row',
-		justifyContent: 'space-evenly',
+		alignItems: 'center',
+		gap: 12
+
+	},
+	section1: {
+		flex: 1,
+		gap: 18
+	},
+	section2: {
+		flex: 1,
+		gap: 18
+	},
+	focus: {
+		...defaultStyles.card,
+		...defaultStyles.flex,
+		padding: 16
+	},
+	home: {
+		...defaultStyles.card,
+		alignItems: 'center',
+		justifyContent: 'center',
+		height: 140
+	},
+	player: {
+		...defaultStyles.card,
+		paddingHorizontal: 14,
+		paddingVertical: 14
+	},
+	image: {
+		width: 48,
+		height: 48,
+		objectFit: "contain",
+		borderRadius: 14
 	}
 });
