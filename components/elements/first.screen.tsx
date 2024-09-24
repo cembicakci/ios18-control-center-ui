@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { _borderRadiusCard, height } from "@/constants/constants";
 import { defaultStyles } from "@/constants/default.styles";
-import { AirdropIcon, AirdropIcon2, AirplaneIcon, ArrowTriangleForwardFillIcon, BackwardIcon, BluetoothIcon, CellularBars, ForwardFillIcon, HomekitIcon, LockOpenRotationIcon, MoonFillIcon, NetworkIcon, PersonalHotspotIcon, QRCodeViewFinderIcon, RectangleOnIcon, SmallCircleFilledCircleIcon, WifiIcon } from "@/assets/icons";
+import { AirdropIcon, AirdropIcon2, AirplaneIcon, ArrowTriangleForwardFillIcon, BackwardIcon, BluetoothIcon, CellularBars, ForwardFillIcon, HomekitIcon, LockOpenRotationIcon, MoonFillIcon, NetworkIcon, PersonalHotspotIcon, QRCodeViewFinderIcon, RectangleOnIcon, SmallCircleFilledCircleIcon, SpeakerWave1FillIcon, SunMaxFillIcon, SunMaxIcon, WifiIcon } from "@/assets/icons";
 
 import IconContainer from "../icon.container";
 
@@ -12,7 +12,6 @@ const FirstScreen = () => {
 			<View style={styles.content}>
 
 				<View style={styles.section1}>
-
 					<View style={defaultStyles.card}>
 						<View style={defaultStyles.flexEvenly}>
 							<IconContainer
@@ -102,7 +101,7 @@ const FirstScreen = () => {
 							</View>
 						</View>
 
-						<View>
+						<View style={{ marginVertical: 4 }}>
 							<Text style={defaultStyles.textMain}>Sevecek Sandım</Text>
 							<Text style={defaultStyles.textDisabled}>Semicenk</Text>
 						</View>
@@ -119,6 +118,20 @@ const FirstScreen = () => {
 							</TouchableOpacity>
 						</View>
 					</View>
+
+					<View style={[defaultStyles.flex, { gap: 12 }]}>
+						<TouchableOpacity style={styles.bar}>
+							<View style={[styles.barItem, styles.barItemBig]}>
+								<SunMaxFillIcon />
+							</View>
+						</TouchableOpacity>
+
+						<TouchableOpacity style={styles.bar}>
+							<View style={[styles.barItem, styles.barItemSmall]}>
+								<SpeakerWave1FillIcon />
+							</View>
+						</TouchableOpacity>
+					</View>
 				</View>
 			</View>
 		</View>
@@ -131,14 +144,13 @@ const styles = StyleSheet.create({
 	container: {
 		height: height,
 		justifyContent: 'center',
-		marginHorizontal: 32
+		marginHorizontal: 30
 	},
 	content: {
 		borderWidth: 1,
 		borderColor: "white",
 		height: height * 0.70,
 		flexDirection: 'row',
-		alignItems: 'center',
 		gap: 12
 
 	},
@@ -171,5 +183,27 @@ const styles = StyleSheet.create({
 		height: 48,
 		objectFit: "contain",
 		borderRadius: 14
+	},
+	bar: {
+		...defaultStyles.card,
+		flex: 1,
+		height: 166,
+		paddingVertical: 16,
+		justifyContent: 'flex-end',
+	},
+	barItem: {
+		backgroundColor: "#FFFFFF",
+		alignItems: "center",
+		justifyContent: 'flex-end',
+		borderBottomLeftRadius: _borderRadiusCard,
+		borderBottomRightRadius: _borderRadiusCard,
+		bottom: -15,
+		paddingBottom: 20
+	},
+	barItemBig: {
+		height: "90%",
+	},
+	barItemSmall: {
+		height: "35%",
 	}
 });

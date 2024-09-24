@@ -28,6 +28,7 @@ import { HomekitIcon } from "./svg/homekit.icon";
 import { HeartFillIcon } from "./svg/heart.fill.icon";
 import { MusicIcon } from "./svg/music.icon";
 import { AirdropIcon2 } from "./svg/airdrop.icon2";
+import { SunMaxFillIcon } from "./svg/sun.max.fill.icon";
 
 export {
 	AirplaneIcon,
@@ -59,5 +60,6 @@ export {
 	HomekitIcon,
 	HeartFillIcon,
 	MusicIcon,
-	AirdropIcon2
+	AirdropIcon2,
+	SunMaxFillIcon
 }
