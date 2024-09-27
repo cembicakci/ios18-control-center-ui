@@ -1,7 +1,8 @@
-import { ImageBackground } from "react-native";
+import { ImageBackground, View } from "react-native";
 import Animated, { useAnimatedScrollHandler, useSharedValue } from "react-native-reanimated";
 
 import { _itemFullSize, _itemSize, _spacing, height } from "@/constants/constants";
+import { HeartFillIcon, HomekitIcon, MusicIcon, WifiIcon } from "@/assets/icons";
 
 import FirstScreen from "./elements/first.screen";
 import SecondScreen from "./elements/second.screen";
@@ -20,7 +21,10 @@ const ControlCenter = () => {
 		<>
 			<ImageBackground
 				style={{
-					flex: 1
+					flex: 1,
+					flexDirection: 'row',
+					alignItems: 'center',
+					justifyContent: 'center'
 				}}
 				source={require('@/assets/images/wallpaper.jpg')}
 				blurRadius={20}
@@ -30,6 +34,8 @@ const ControlCenter = () => {
 					scrollEventThrottle={1000 / 60} // 16 fps
 					snapToInterval={height}
 					decelerationRate={"fast"}
+					contentContainerStyle={{ marginLeft: 16 }}
+					showsVerticalScrollIndicator={false}
 				>
 
 					<FirstScreen />
@@ -38,6 +44,19 @@ const ControlCenter = () => {
 					<ForthScreen />
 
 				</Animated.ScrollView>
+
+				<View
+					style={{
+						gap: 16,
+						paddingHorizontal: 8
+					}}
+				>
+					<HeartFillIcon />
+					<MusicIcon />
+					<HomekitIcon />
+					<WifiIcon />
+
+				</View>
 			</ImageBackground>
 		</>
 	);

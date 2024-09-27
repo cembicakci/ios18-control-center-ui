@@ -174,8 +174,7 @@ export default FirstScreen;
 const styles = StyleSheet.create({
 	container: {
 		height: height,
-		justifyContent: 'center',
-		marginHorizontal: 30
+		justifyContent: 'center'
 	},
 	content: {
 		flexDirection: 'row',

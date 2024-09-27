@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
 	container: {
 		height: height,
 		justifyContent: 'center',
-		marginHorizontal: 30,
 	},
 	content: {
 		...defaultStyles.card,

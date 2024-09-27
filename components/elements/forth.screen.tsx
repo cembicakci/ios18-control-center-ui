@@ -39,8 +39,7 @@ const styles = StyleSheet.create({
 	},
 	content: {
 		height: "80%",
-		justifyContent: "center",
-		marginHorizontal: 30
+		justifyContent: "center"
 	},
 	list: {
 		gap: 16
