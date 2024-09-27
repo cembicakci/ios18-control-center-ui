@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { _borderRadiusCard, height } from "@/constants/constants";
 import { defaultStyles } from "@/constants/default.styles";
-import { AirdropIcon, AirdropIcon2, AirplaneIcon, ArrowTriangleForwardFillIcon, BackwardIcon, BluetoothIcon, CellularBars, ForwardFillIcon, HomekitIcon, LockOpenRotationIcon, MoonFillIcon, NetworkIcon, PersonalHotspotIcon, QRCodeViewFinderIcon, RectangleOnIcon, SmallCircleFilledCircleIcon, SpeakerWave1FillIcon, SunMaxFillIcon, SunMaxIcon, WifiIcon } from "@/assets/icons";
+import { AirdropIcon, AirdropIcon2, AirplaneIcon, ArrowTriangleForwardFillIcon, BackwardIcon, BluetoothIcon, CalculatorIcon, CameraFillIcon, CellularBars, FlashlightOffFillIcon, ForwardFillIcon, HomekitIcon, LockOpenRotationIcon, MoonFillIcon, NetworkIcon, NoteTextIcon, PersonalHotspotIcon, QRCodeViewFinderIcon, RectangleOnIcon, ShazamIcon, SmallCircleFilledCircleIcon, SpeakerWave1FillIcon, SunMaxFillIcon, SunMaxIcon, TimerIcon, WifiIcon } from "@/assets/icons";
 
 import IconContainer from "../icon.container";
 
@@ -132,6 +132,37 @@ const FirstScreen = () => {
 							</View>
 						</TouchableOpacity>
 					</View>
+
+					<View style={defaultStyles.flexBetween}>
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<FlashlightOffFillIcon />
+						</TouchableOpacity>
+
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<TimerIcon />
+						</TouchableOpacity>
+					</View>
+
+
+					<View style={defaultStyles.flexBetween}>
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<CalculatorIcon />
+						</TouchableOpacity>
+
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<CameraFillIcon />
+						</TouchableOpacity>
+					</View>
+
+					<View style={defaultStyles.flexBetween}>
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<ShazamIcon />
+						</TouchableOpacity>
+
+						<TouchableOpacity style={defaultStyles.iconContainer}>
+							<NoteTextIcon />
+						</TouchableOpacity>
+					</View>
 				</View>
 			</View>
 		</View>
@@ -147,12 +178,8 @@ const styles = StyleSheet.create({
 		marginHorizontal: 30
 	},
 	content: {
-		borderWidth: 1,
-		borderColor: "white",
-		height: height * 0.70,
 		flexDirection: 'row',
 		gap: 12
-
 	},
 	section1: {
 		flex: 1,
@@ -171,7 +198,7 @@ const styles = StyleSheet.create({
 		...defaultStyles.card,
 		alignItems: 'center',
 		justifyContent: 'center',
-		height: 140
+		height: 165
 	},
 	player: {
 		...defaultStyles.card,
