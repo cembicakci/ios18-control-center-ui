@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { _borderRadius, _borderRadiusCard, height } from "@/constants/constants";
 import { defaultStyles } from "@/constants/default.styles";
-import { ArrowTriangleForwardFillIcon, BackwardIcon, EllipsisIcon, ForwardFillIcon, SpeakerFillIcon, SpeakerWave3FillIcon } from "@/assets/icons";
+import { AirdropIcon2, ArrowTriangleForwardFillIcon, BackwardIcon, EllipsisIcon, ForwardFillIcon, SpeakerFillIcon, SpeakerWave3FillIcon } from "@/assets/icons";
 
 const SecondScreen = () => {
 	return (
@@ -60,6 +60,11 @@ const SecondScreen = () => {
 						<SpeakerWave3FillIcon />
 					</TouchableOpacity>
 				</View>
+
+				<View style={styles.badge}>
+					<AirdropIcon2 />
+					<Text style={styles.badgeText}>iPhone</Text>
+				</View>
 			</View>
 		</View>
 	);
@@ -105,5 +110,21 @@ const styles = StyleSheet.create({
 		fontSize: 12,
 		fontWeight: "600",
 		marginTop: 4
+	},
+	badge: {
+		backgroundColor: '#FFFFFF20',
+		flexDirection: 'row',
+		padding: 12,
+		borderRadius: 120,
+		gap: 8,
+		alignItems: 'center',
+		justifyContent: 'center',
+		alignSelf: 'center',
+		marginTop: 4
+	},
+	badgeText: {
+		color: '#FFFFFF',
+		fontSize: 14,
+		fontWeight: '500'
 	}
 });
