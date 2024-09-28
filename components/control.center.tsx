@@ -1,21 +1,37 @@
-import { ImageBackground, View } from "react-native";
-import Animated, { useAnimatedScrollHandler, useSharedValue } from "react-native-reanimated";
+import { useRef, useState } from "react";
+import { ImageBackground, TouchableOpacity, View } from "react-native";
+import Animated, { runOnJS, useAnimatedScrollHandler, useSharedValue } from "react-native-reanimated";
 
 import { _itemFullSize, _itemSize, _spacing, height } from "@/constants/constants";
-import { HeartFillIcon, HomekitIcon, MusicIcon, WifiIcon } from "@/assets/icons";
-
-import FirstScreen from "./elements/first.screen";
-import SecondScreen from "./elements/second.screen";
-import ThirdScreen from "./elements/third.screen";
-import ForthScreen from "./elements/forth.screen";
+import { HeartFillSmallIcon, HomekitSmallIcon, WifiSmallIcon, MusicSmallIcon } from "@/assets/icons";
+import { FirstScreen, ForthScreen, SecondScreen, ThirdScreen } from "./elements";
 
 const ControlCenter = () => {
 
 	const scrollY = useSharedValue(0)
+	const scrollViewRef = useRef<Animated.ScrollView | null>(null);
 
-	const onScroll = useAnimatedScrollHandler(e => {
-		scrollY.value = e.contentOffset.y / _itemFullSize; // 0 - 1 - 2 - 3 - ...
-	})
+	const [selectedIndex, setSelectedIndex] = useState(0)
+
+	const onScroll = useAnimatedScrollHandler({
+		onScroll: (e) => {
+			scrollY.value = e.contentOffset.y / _itemFullSize;
+		},
+		onMomentumEnd: (e) => {
+			const index = Math.round(e.contentOffset.y / height);
+			runOnJS(setSelectedIndex)(index);
+		},
+	});
+
+	const scrollToScreen = (screenIndex: number) => {
+		setSelectedIndex(screenIndex)
+		if (scrollViewRef.current) {
+			scrollViewRef.current.scrollTo({
+				y: screenIndex * height,
+				animated: true,
+			});
+		}
+	};
 
 	return (
 		<>
@@ -30,11 +46,12 @@ const ControlCenter = () => {
 				blurRadius={20}
 			>
 				<Animated.ScrollView
+					ref={scrollViewRef}
 					onScroll={onScroll}
 					scrollEventThrottle={1000 / 60} // 16 fps
 					snapToInterval={height}
 					decelerationRate={"fast"}
-					contentContainerStyle={{ marginLeft: 16 }}
+					contentContainerStyle={{ marginLeft: 40 }}
 					showsVerticalScrollIndicator={false}
 				>
 
@@ -47,14 +64,25 @@ const ControlCenter = () => {
 
 				<View
 					style={{
-						gap: 16,
-						paddingHorizontal: 8
+						gap: 40,
+						paddingHorizontal: 12
 					}}
 				>
-					<HeartFillIcon />
-					<MusicIcon />
-					<HomekitIcon />
-					<WifiIcon />
+					<TouchableOpacity onPress={() => scrollToScreen(0)}>
+						<HeartFillSmallIcon color={selectedIndex === 0 ? "#FFFFFF" : "#00000080"} />
+					</TouchableOpacity>
+
+					<TouchableOpacity onPress={() => scrollToScreen(1)}>
+						<MusicSmallIcon color={selectedIndex === 1 ? "#FFFFFF" : "#00000080"} />
+					</TouchableOpacity>
+
+					<TouchableOpacity onPress={() => scrollToScreen(2)}>
+						<HomekitSmallIcon color={selectedIndex === 2 ? "#FFFFFF" : "#00000080"} />
+					</TouchableOpacity>
+
+					<TouchableOpacity onPress={() => scrollToScreen(3)}>
+						<WifiSmallIcon color={selectedIndex === 3 ? "#FFFFFF" : "#00000080"} />
+					</TouchableOpacity>
 
 				</View>
 			</ImageBackground>

@@ -1,11 +1,10 @@
 import { StyleSheet, View } from 'react-native';
+import 'react-native-reanimated';
 
 import ControlCenter from '@/components/control.center';
-import ListElement from '@/components/list.element';
-import mockData from '@/constants/mock.data';
 
 import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+
 
 export default function RootLayout() {
 

@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { _borderRadiusCard, height } from "@/constants/constants";
 import { defaultStyles } from "@/constants/default.styles";
-import { AirdropIcon, AirdropIcon2, AirplaneIcon, ArrowTriangleForwardFillIcon, BackwardIcon, BluetoothIcon, CalculatorIcon, CameraFillIcon, CellularBars, FlashlightOffFillIcon, ForwardFillIcon, HomekitIcon, LockOpenRotationIcon, MoonFillIcon, NetworkIcon, NoteTextIcon, PersonalHotspotIcon, QRCodeViewFinderIcon, RectangleOnIcon, ShazamIcon, SmallCircleFilledCircleIcon, SpeakerWave1FillIcon, SunMaxFillIcon, SunMaxIcon, TimerIcon, WifiIcon } from "@/assets/icons";
+import { AirdropIcon, AirdropIcon2, AirplaneIcon, ArrowTriangleForwardFillIcon, BackwardIcon, BluetoothIcon, CalculatorIcon, CameraFillIcon, CellularBars, FlashlightOffFillIcon, ForwardFillIcon, HomekitIcon, LockOpenRotationIcon, MoonFillIcon, NetworkIcon, NoteTextIcon, PersonalHotspotIcon, QRCodeViewFinderIcon, RectangleOnIcon, ShazamIcon, SmallCircleFilledCircleIcon, SpeakerWave1FillIcon, SunMaxFillIcon, TimerIcon, WifiIcon } from "@/assets/icons";
 
 import IconContainer from "../icon.container";
 

@@ -29,6 +29,10 @@ import { HeartFillIcon } from "./svg/heart.fill.icon";
 import { MusicIcon } from "./svg/music.icon";
 import { AirdropIcon2 } from "./svg/airdrop.icon2";
 import { SunMaxFillIcon } from "./svg/sun.max.fill.icon";
+import { HeartFillSmallIcon } from "./svg/heart.fill.small.icon";
+import { HomekitSmallIcon } from "./svg/homekit.small.icon";
+import { WifiSmallIcon } from "./svg/wifi.small.icon";
+import { MusicSmallIcon} from "./svg/music.small.icon";
 
 export {
 	AirplaneIcon,
@@ -61,5 +65,9 @@ export {
 	HeartFillIcon,
 	MusicIcon,
 	AirdropIcon2,
-	SunMaxFillIcon
+	SunMaxFillIcon,
+	HeartFillSmallIcon,
+	HomekitSmallIcon,
+	WifiSmallIcon,
+	MusicSmallIcon
 }
